@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# turtlebot3 install file
+# turtlebot3 install file -> parameter training tool
 
 sudo apt install ros-humble-gazebo-*
 
