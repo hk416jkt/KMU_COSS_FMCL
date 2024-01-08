@@ -32,11 +32,12 @@ ros-humble-navigation2 \
 ros-humble-nav2-bringup \
 ros-humble-cartographer \
 ros-humble-cartographer-ros \
+ros-dev-tools \
 udev \
 ufw
 
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-echo "export ROS_DOMAIN_ID=2" >> ~/.bashrc #다중 통신 혹은 2번 사용시 다른 번호 사용. (범위는 1~232 내에서 사용)
+echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc #다중 통신 혹은 2번 사용시 다른 번호 사용. (범위는 1~232 내에서 사용)
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 git clone https://github.com/firstbot1/ydlidar_ros2_driver   #for ydlidar X4-pro
