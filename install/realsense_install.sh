@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#this file is ssetting for intel realsense d435.
+# this file is setting for intel realsense d435.
 # recommand version : ubuntu 22.04
 # recommand HW : realsense d435
+
 
 sudo mkdir -p /etc/apt/keyrings
 curl -sSf https://librealsense.intel.com/Debian/librealsense.pgp | sudo tee /etc/apt/keyrings/librealsense.pgp > /dev/null
