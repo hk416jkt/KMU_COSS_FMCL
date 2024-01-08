@@ -28,7 +28,8 @@ sudo apt purge brltty
 sudo apt install ros-humble-desktop
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 source ~/.bashrc
-sudo apt install ros-humble-serial-driver \
+sudo apt install ros-humble-ros-base \ 
+ros-humble-serial-driver \
 ros-humble-teleop-twist-keyboard \
 ros-humble-navigation2 \
 ros-humble-nav2-bringup \
