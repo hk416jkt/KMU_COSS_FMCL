@@ -25,8 +25,10 @@ mkdir build && cd build
 cmake ..
 make && sudo make install
 sudo apt purge brltty
-sudo apt install ros-humble-desktop \\
-ros-humble-serial-driver \
+sudo apt install ros-humble-desktop
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt install ros-humble-serial-driver \
 ros-humble-teleop-twist-keyboard \
 ros-humble-navigation2 \
 ros-humble-nav2-bringup \
@@ -36,7 +38,7 @@ ros-dev-tools \
 udev \
 ufw
 
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
 echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc #다중 통신 혹은 2번 사용시 다른 번호 사용. (범위는 1~232 내에서 사용)
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
