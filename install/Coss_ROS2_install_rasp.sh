@@ -20,6 +20,9 @@ sudo apt update && sudo apt upgrade
 sudo apt install git  
 sudo apt install net-tools # ifconfg  명령 사용 가능
 sudo apt install openssh-server  #ssh 접속 가능
+sudo apt install -y python3-pip
+pip3 install -U argcomplete
+sudo apt install python3-colcon-common-extensions
 
 cd ~
 #YDLidar-SDK 설치 및 빌드(home에서)
