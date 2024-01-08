@@ -45,6 +45,7 @@ git clone https://github.com/firstbot1/jarabot               #for ydlidar X4-pro
 #git clone https://github.com/Slamtec/sllidar_ros2.git        #RPlidar A1M8 사용시
 #git clone https://github.com/jarabot/jarabot.git             #RPlidar A1M8 사용시
 cd ~/ros2_ws
+source ~/.bashrc
 colcon build --symlink-install
 sudo cp ~/ros2_ws/src/jarabot/jarabot_node/rule/99-jarabot.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
