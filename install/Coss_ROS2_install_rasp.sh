@@ -50,6 +50,7 @@ git clone https://github.com/firstbot1/ydlidar_ros2_driver   #for ydlidar X4-pro
 git clone https://github.com/firstbot1/jarabot               #for ydlidar X4-pro
 #git clone https://github.com/Slamtec/sllidar_ros2.git        #RPlidar A1M8 사용 시
 #git clone https://github.com/jarabot/jarabot.git             #RPlidar A1M8 사용 시 
+source ~/.bashrc
 cd ~/ros2_ws
 colcon build --symlink-install
 
