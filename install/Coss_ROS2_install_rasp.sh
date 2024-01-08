@@ -46,9 +46,19 @@ ufw
 
 echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+echo "source ~/ros2_ws/install/setup.bash
+
+# 단축키 모음
+alias sai='sudo apt install'
+alias cw='cd ~/ros2_ws'
+alias cs='cd ~/ros2_ws/src'
+alias cb='cd ~/ros2_ws && colcon build --symlink-install'
+alias eb='nano ~/.bashrc'
+alias sb='source ~/.bashrc'"
 
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
+source ~/.bashrc
 git clone https://github.com/firstbot1/ydlidar_ros2_driver   #for ydlidar X4-pro
 git clone https://github.com/firstbot1/jarabot               #for ydlidar X4-pro
 #git clone https://github.com/Slamtec/sllidar_ros2.git        #RPlidar A1M8 사용 시
