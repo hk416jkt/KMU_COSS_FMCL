@@ -35,6 +35,7 @@ cmake ..
 make && sudo make install
 sudo apt purge brltty
 sudo apt install ros-humble-serial-driver \
+ros-humble-ros-base \
 ros-humble-teleop-twist-keyboard \
 ros-humble-navigation2 \
 ros-humble-nav2-bringup \
