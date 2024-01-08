@@ -44,9 +44,9 @@ ros-humble-cartographer-ros \
 udev \
 ufw
 
-echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-echo "source ~/ros2_ws/install/setup.bash
+echo "export ROS_DOMAIN_ID=3
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
 
 # 단축키 모음
 alias sai='sudo apt install'
