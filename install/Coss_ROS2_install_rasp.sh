@@ -63,5 +63,13 @@ sudo ufw status
 sudo chmod 666 /dev/ttyUSB0
 sudo chmod 666 /dev/ttyUSB1
 
+sudo systemctl status ssh  # SSH 서버 실행 중인지 상태 확인
+sudo systemctl start ssh # SSH 서버 실행시키기 
+sudo ufw allow 22
+sudo ufw allow ssh
+sudo ufw status
+sudo ufw enable
+sudo systemctl restart ssh
+
 sudo reboot
 
