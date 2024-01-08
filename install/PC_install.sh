@@ -40,7 +40,17 @@ udev \
 ufw
 
 
-echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc #다중 통신 혹은 2번 사용시 다른 번호 사용. (범위는 1~232 내에서 사용)
+echo "export ROS_DOMAIN_ID=3  #다중 통신 혹은 2번 사용시 다른 번호 사용. (범위는 1~232 내에서 사용)
+source ~/ros2_ws/install/setup.bash
+
+# 단축키 모음
+alias sai='sudo apt install'
+alias cw='cd ~/ros2_ws'
+alias cs='cd ~/ros2_ws/src'
+alias cb='cd ~/ros2_ws && colcon build --symlink-install'
+alias eb='nano ~/.bashrc'
+alias sb='source ~/.bashrc'" >> ~/.bashrc
+sb
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 git clone https://github.com/firstbot1/ydlidar_ros2_driver   #for ydlidar X4-pro
@@ -48,8 +58,7 @@ git clone https://github.com/firstbot1/jarabot               #for ydlidar X4-pro
 #git clone https://github.com/Slamtec/sllidar_ros2.git        #RPlidar A1M8 사용시
 #git clone https://github.com/jarabot/jarabot.git             #RPlidar A1M8 사용시
 cd ~/ros2_ws
-source ~/.bashrc
-colcon build --symlink-install
+sb && cb
 sudo cp ~/ros2_ws/src/jarabot/jarabot_node/rule/99-jarabot.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger
