@@ -12,6 +12,11 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 sudo apt update && sudo apt upgrade
+
+sudo apt install python3-colcon-common-extensions
+sudo apt-get install python swig
+sudo apt-get install python-pip
+
 cd ~
 #YDLidar-SDK 설치 및 빌드(home에서)
 git clone https://github.com/YDLIDAR/YDLidar-SDK.git
@@ -19,9 +24,9 @@ cd YDLidar-SDK
 mkdir build && cd build
 cmake ..
 make && sudo make install
-# ~/.bashrc에 source /opt/ros/humble/setup.bash 확인
 sudo apt purge brltty
-sudo apt install ros-humble-serial-driver \
+sudo apt install ros-humble-desktop \\
+ros-humble-serial-driver \
 ros-humble-teleop-twist-keyboard \
 ros-humble-navigation2 \
 ros-humble-nav2-bringup \
@@ -29,6 +34,7 @@ ros-humble-cartographer \
 ros-humble-cartographer-ros \
 udev \
 ufw
+
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 echo "export ROS_DOMAIN_ID=2" >> ~/.bashrc #다중 통신 혹은 2번 사용시 다른 번호 사용. (범위는 1~232 내에서 사용)
 mkdir -p ~/ros2_ws/src
