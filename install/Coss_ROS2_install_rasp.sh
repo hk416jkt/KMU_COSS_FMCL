@@ -38,17 +38,30 @@ ros-humble-cartographer-ros \
 udev \
 ufw
 
+echo "export ROS_DOMAIN_ID=3" >> ~/.bashrc
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 git clone https://github.com/firstbot1/ydlidar_ros2_driver   #for ydlidar X4-pro
 git clone https://github.com/firstbot1/jarabot               #for ydlidar X4-pro
-#git clone https://github.com/Slamtec/sllidar_ros2.git        #for rplidar A1M8
-#git clone https://github.com/jarabot/jarabot.git             #for rplidar A1M8 
+#git clone https://github.com/Slamtec/sllidar_ros2.git        #RPlidar A1M8 사용 시
+#git clone https://github.com/jarabot/jarabot.git             #RPlidar A1M8 사용 시 
 cd ~/ros2_ws
 colcon build --symlink-install
 
 sudo cp ~/ros2_ws/src/jarabot/jarabot_node/rule/99-jarabot.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger
+#ufw가 설치되어 있지 않은 경우에 설치 : sudo apt-get install ufw
+sudo ufw enable
+
+sudo ufw allow 1:65535/tcp
+sudo ufw allow 1:65535/udp
+sudo ufw status 
+
+sudo chmod 666 /dev/ttyUSB0
+sudo chmod 666 /dev/ttyUSB1
 
 sudo reboot
+
