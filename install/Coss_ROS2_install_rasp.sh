@@ -60,14 +60,12 @@ mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 source ~/.bashrc
 git clone https://github.com/firstbot1/ydlidar_ros2_driver   #for ydlidar X4-pro
-git clone https://github.com/firstbot1/jarabot               #for ydlidar X4-pro
-#git clone https://github.com/Slamtec/sllidar_ros2.git        #RPlidar A1M8 사용 시
-#git clone https://github.com/jarabot/jarabot.git             #RPlidar A1M8 사용 시 
+git clone git@github.com:hk416jkt/coss_assign_robot.git           #RPlidar A1M8 사용 시 
 source ~/.bashrc
 cd ~/ros2_ws
 colcon build --symlink-install
 
-sudo cp ~/ros2_ws/src/jarabot/jarabot_node/rule/99-jarabot.rules /etc/udev/rules.d/
+sudo cp ~/ros2_ws/src/coss_assign_robot/coss_assign_robot_circle/circle_node/rule/99-jarabot.rules/etc/udev/rules.d/
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 #ufw가 설치되어 있지 않은 경우에 설치 : sudo apt-get install ufw
