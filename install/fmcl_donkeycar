@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# maker: Jun seong Park
+# donkey car install on RPi 5
+
+sudo apt update && sudo apt upgrade
+
+python3 -m venv env --system-site-packages
+echo "source ~/env/bin/activate" >> ~/.bashrc
+source ~/.bashrc
+sudo apt install libcap-dev
+
+mkdir donkey_ws
+cd donkey_ws
+git clone 
+cd donkeycar
+git checkout main
+pip install tensorflow
+pip install -e .[pi]
+
+python -c "import tensorflow; print(tensorflow.__version__)"
+
+echo "alias ds='cd 	~/donkey_ws/donkeycar'" ~/.bashrc
+echo "alias dm='cd ~/mycar'" ~/.bashrc
+echo "alias dc0='donkey calibrate --channel 0 --bus=1'" ~/.bashrc
+echo "alias dc1='donkey calibrate --channel 1 --bus=1'" >> ~/.bashrc
+echo "alias dca='cd ~/mycar && python manage.py drive'
