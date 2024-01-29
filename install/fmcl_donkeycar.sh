@@ -5,16 +5,33 @@
 
 sudo apt update && sudo apt upgrade
 
+sudo apt-get
+wget https://www.python.org/ftp/python/3.9.12/Python-3.9.12.tgz
+tar zxf Python-3.9.12.tgz
+cd Python-3.9.12
+sudo ./configure --enable-optimizations
+make -j 4
+sudo make install
+
 python3 -m venv env --system-site-packages
 echo "source ~/env/bin/activate" >> ~/.bashrc
 source ~/.bashrc
 sudo apt install libcap-dev
+sudo apt-get install libssl-dev
+git clone https://github.com/IntelRealSense/librealsense
+cd librealsense
+mkdir build
+cd build
+cmake ../ -DBUILD_PYTHON_BINDINGS=TRUE
+make -j4
+sudo make install #Optional if you want the library to be installed in your system
 
 mkdir donkey_ws
 cd donkey_ws
-git clone 
+git clone https://github.com/autorope/donkeycar
 cd donkeycar
 git checkout main
+
 pip install tensorflow
 pip install -e .[pi]
 
