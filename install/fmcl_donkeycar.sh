@@ -5,13 +5,10 @@
 
 sudo apt update && sudo apt upgrade
 sudo apt install libffi-dev cmake git
-sudo apt-get
-wget https://www.python.org/ftp/python/3.9.12/Python-3.9.12.tgz
-tar zxf Python-3.9.12.tgz
-cd Python-3.9.12
-sudo ./configure --enable-optimizations
-make -j 4
-sudo make install
+sudo apt-get install python3-launchpadlib
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.9
 
 python3 -m venv env --system-site-packages
 echo "source ~/env/bin/activate" >> ~/.bashrc
@@ -31,8 +28,6 @@ cd donkey_ws
 git clone https://github.com/autorope/donkeycar
 cd donkeycar
 git checkout main
-
-pip install tensorflow
 pip install -e .[pi]
 
 python -c "import tensorflow; print(tensorflow.__version__)"
