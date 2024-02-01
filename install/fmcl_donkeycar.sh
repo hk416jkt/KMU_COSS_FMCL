@@ -4,7 +4,7 @@
 # donkey car install on RPi 5
 
 sudo apt update && sudo apt upgrade
-
+sudo apt install libffi-dev cmake git
 sudo apt-get
 wget https://www.python.org/ftp/python/3.9.12/Python-3.9.12.tgz
 tar zxf Python-3.9.12.tgz
