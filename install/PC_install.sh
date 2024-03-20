@@ -28,15 +28,15 @@ sudo apt purge brltty
 sudo apt install ros-humble-desktop
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 source ~/.bashrc
-sudo apt install ros-humble-ros-base \ 
-ros-humble-serial-driver \
-ros-humble-teleop-twist-keyboard \
-ros-humble-navigation2 \
-ros-humble-nav2-bringup \
-ros-humble-cartographer \
-ros-humble-cartographer-ros \
-ros-dev-tools \
-udev \
+sudo apt install ros-humble-ros-base 
+sudo apt install ros-humble-serial-driver 
+sudo apt install ros-humble-teleop-twist-keyboard 
+sudo apt install ros-humble-navigation2 
+sudo apt install ros-humble-nav2-bringup 
+sudo apt install ros-humble-cartographer 
+sudo apt install ros-humble-cartographer-ros 
+sudo apt install ros-dev-tools 
+udev
 ufw
 
 
@@ -48,7 +48,7 @@ alias sai='sudo apt install'
 alias cw='cd ~/ros2_ws'
 alias cs='cd ~/ros2_ws/src'
 alias cb='cd ~/ros2_ws && colcon build --symlink-install'
-alias eb='nano ~/.bashrc'
+alias eb='nano ~/.bashrc' 
 alias sb='source ~/.bashrc'" >> ~/.bashrc
 sb
 mkdir -p ~/ros2_ws/src
